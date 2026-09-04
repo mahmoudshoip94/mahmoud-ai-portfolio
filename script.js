@@ -49,3 +49,16 @@ window.addEventListener('mousemove', (e) => {
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+
+// Dynamic object-tracking frame counter.
+const trackingFrame = document.getElementById('tracking-frame-number');
+
+if (trackingFrame) {
+  let frame = 248;
+  setInterval(() => {
+    frame = frame >= 999 ? 248 : frame + 1;
+    trackingFrame.textContent = String(frame).padStart(4, '0');
+  }, 120);
+}
+
